@@ -2,22 +2,81 @@
 layout: default
 ---
 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<div class="hero-wrapper">
+  <div class="container">
+    <div class="introduction-container">
+      <h1>Michael Dela Cuesta</h1>
+      <h2>
+        coder, does cardio workouts, hates caffeine, needs all the sleep he can get and a parkour practitioner wannabe
+      </h2>
+    </div>
+    <div class="loves-container hidden-sm-down">
+      <h2>is into C#, .NET, Javascript, NodeJS, DevOps and Scrum</h2>
+    </div>
+    <div class="find-me-container text-center">
+      <h2>find me in</h2>
+      <a href="http://stackoverflow.com/users/1852919/mdcuesta" class="btn btn-lg btn-danger btn-stack-overflow">
+        <i class="fa fa-lg fa-stack-overflow"></i>
+        mdcuesta
+      </a>
+      <a href="https://github.com/mdcuesta" class="btn btn-lg btn-success btn-github">
+        <i class="fa fa-lg fa-github"></i>
+        mdcuesta
+      </a>
+      <a href="https://www.linkedin.com/in/michael-dela-cuesta-35984a38" class="btn btn-lg btn-info btn-linkedin">
+        <i class="fa fa-lg fa-linkedin"></i>
+        mdcuesta
+      </a>
+    </div>
+  </div>
+</div>
+<div class="home-about-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+          <img src="css/images/me-harbour.jpg" alt="Michael at the Darling Harbour" class="img-thumbnail" />
+      </div>
+      <div class="col-md-8">
+        <p>
+          I'm Michael, a language agnostic Software Engineer from Cebu and I love writing codes.
+        </p>
+        <p>Things I love</p>
+        <ul>
+          <li>Coding</li>
+          <li>Learning</li>
+          <li>Sharing</li>
+          <li>Working at home</li>
+          <li>C# and .NET - my first love</li>
+          <li>NodeJS and Javascript - my mistress</li>
+          <li>HTML5, CSS, SASS</li>
+          <li>Design Patterns</li>
+          <li>Agile, Scrum and XP</li>
+          <li>DevOps</li>
+        </ul>
+        <a href="/about" class="read-more-link">
+          Read more...
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="home-post-wrapper">
+  <div class="container">
+    <ul class="post-list list-unstyled">
+      {% for post in site.posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+          <p>
+            {{ post.excerpt }}
+            <a href="{{ post.url | prepend: site.baseurl }}" class="read-more-link">
+              Read more...
+            </a>
+          </p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>

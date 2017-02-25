@@ -1,52 +1,309 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-@charset "utf-8";
+@charset 'utf-8';
 
+@import 'breakpoints';
 
+$black:                     #000;
+$white:                     #fff;
+$site-footer-bg:            #fff;
+$site-footer-color:         #06908f;
+$site-footer-border-color:  #ccc;
+$site-footer-link-color:    #666;
+$post-link-color:           #39393a;
+$home-about-bg:             #e6e6e6;
+$href-color:                #06908f;
+$header-link-color:         #ff8552;
+$site-header-shadow:        rgba(31, 53, 78, .11);
 
-// Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+html {
+  height: 100%;
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+}
 
+a {
+  color: $href-color;
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+  &:hover {
+    color: $href-color;
+  }
+}
+
+.hero-wrapper {
+  background: url('images/hero.jpg') no-repeat top center;
+  background-attachment: fixed;
+  background-size: 100%;
+
+  $h1-color: #fff;
+  $h2-color: #fff;
+
+  h1 {
+    color: $h1-color;
+    font-family: 'Baloo', cursive;
+    font-size: 4em;
+    padding-top: 3rem;
+    text-align: center;
+  }
+
+  h2 {
+    color: $h2-color;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    text-align: center;
+  }
+}
+
+.btn-github,
+.btn-stack-overflow,
+.btn-linkedin {
+  font-size: 2em;
+  margin: .2rem;
+}
+
+.home-about-wrapper {
+  background: $home-about-bg;
+}
+
+@include media-breakpoint-up(lg) {
+  .hero-wrapper {
+
+    .find-me-container {
+      padding-bottom: 5rem;
+      padding-top: 3rem;
+    }
+
+    .loves-container {
+      padding: 3rem 0 0;
+    }
+  }
+
+  .about-wrapper,
+  .home-about-wrapper {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+}
+
+@include media-breakpoint-down(md) {
+
+  .hero-wrapper {
+
+    .find-me-container {
+      padding-bottom: 1.5rem;
+      padding-top: 0;
+    }
+
+    .loves-container {
+      padding: 1rem;
+    }
+
+    .btn-github,
+    .btn-stack-overflow,
+    .btn-linkedin {
+      font-size: 1em;
+    }
+  }
+
+  .about-wrapper,
+  .home-about-wrapper {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+
+  .hero-wrapper {
+    background-attachment: scroll;
+
+    h1 {
+      font-size: 3em;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    .btn-github,
+    .btn-stack-overflow,
+    .btn-linkedin {
+      font-size: 1em;
+    }
+
+    .find-me-container {
+      margin-top: 1.5rem;
+    }
+
+    .about-wrapper,
+    .home-about-wrapper {
+      padding-bottom: 2rem;
+      padding-top: 2rem;
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+
+  .hero-wrapper {
+    background-attachment: scroll;
+
+    h1 {
+      font-size: 2em;
+      padding-top: 1rem;
+    }
+
+    h2 {
+      font-size: 1em;
+    }
+
+    .btn-github,
+    .btn-stack-overflow,
+    .btn-linkedin {
+      font-size: 1em;
+    }
+
+    .find-me-container {
+      margin-top: .8rem;
+      padding-bottom: .1rem;
+    }
+
+    .about-wrapper,
+    .home-about-wrapper {
+      margin-bottom: 1rem;
+      margin-top: 0;
+    }
+  }
+}
+
+.site-footer {
+  background: $site-footer-bg;
+  border-top: 1px solid $site-header-shadow;
+  color: $site-footer-link-color;
+  padding: 2rem 0;
+
+  .col-md-4 {
+    padding-bottom: 1rem;
+  }
+
+  .list-links {
+    a {
+      color: $site-footer-link-color;
+    }
+  }
+
+  .list-find-me {
+    li {
+      float: left;
+      margin-right: 2rem;
+    }
+
+    a {
+      color: $site-footer-link-color;
+      font-size: 2em;
+    }
+  }
+
+  .footer-header {
+    color: $site-footer-color;
+    font-size: 1.1em;
+    font-weight: normal;
+    margin-bottom: 1rem;
+  }
+
+  .mail-to-link {
+    color: $site-footer-link-color;
+  }
+
+  .btn-rss {
+    background: $site-footer-link-color;
+    border-color: $site-footer-link-color;
+    margin-bottom: 1rem;
+  }
+}
+
+.home-post-wrapper {
+  background: $white;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.post-link {
+  color: $post-link-color;
+  font-family: 'Baloo', cursive;
+  font-size: 1em;
+  font-weight: normal;
+
+  &:hover {
+    color: $post-link-color;
+    text-decoration: underline;
+  }
+}
+
+.read-more-link {
+  color: $site-footer-color;
+
+  &:hover {
+    color: $site-footer-color;
+    text-decoration: underline;
+  }
+}
+
+.container {
+  &.post {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Baloo', cursive;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+  }
+}
+
+.site-header {
+  box-shadow: $site-header-shadow 0 1px;
+
+  a {
+    color: $header-link-color;
+  }
+}
+
+.navbar-light {
+
+  .navbar-brand {
+    color: $header-link-color;
+    font-family: 'Baloo', cursive;
+    font-size: 1.2em;
+
+    &:hover {
+      color: $header-link-color;
+    }
+  }
+
+  .navbar-nav {
+    font-size: 1.2em;
+
+    .nav-link {
+      color: $header-link-color;
+
+      &:hover {
+        color: $header-link-color;
+      }
+    }
+  }
+}
+
+.img-thumbnail-me {
+  margin-bottom: 1rem;
+}

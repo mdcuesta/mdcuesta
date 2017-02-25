@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "The Start"
+date:   2016-10-12 18:30:26
+categories: jekyll update
+---
+It was over a month ago since I resigned from Accenture.  I took the risk and quit a stable job over a homebased opportunity.  
+
+#### Why?
+
+* The comfort of working at home
+* No more heavy traffic
+* No more work overtime
+* No more dress codes
+* No more corporate bull****
+
+Aside from those things mentioned above I have always plan to start my own startup company and I believe I can't do that while in Accenture.  In a homebased job I have full control of my time allowing me to do other things like coding an application I have in mind.
+
+#### This 2017, I Plan to
+
+* Create an application for the Real Estate Market in the Philippines
+* Get socialized with other geeks
+* Study Data Science and Machine Learning
+* Sleep a lot
+* Start a start up
+* Learn how to write
+
+Everything is in progress but it is still a long way to go. Hope I made the right decision.
